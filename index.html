@@ -166,15 +166,14 @@
     <header class="brand">
       <div class="logo">LOGO</div>
 
-      <h1>Bem vindo</h1>
+     <h1 id="titulo">Bem vindo</h1>
       <p>Escolha uma opção para continuar.</p>
     </header>
 
     <section class="options" aria-label="Opções de contato">
 
       <!-- WHATSAPP -->
-      <a class="option"
-         href="https://wa.me/5519999854416"
+     <a id="whatsapp" class="option"
          target="_blank"
          rel="noopener noreferrer">
         <div class="icon">
@@ -188,8 +187,7 @@
       </a>
 
       <!-- INSTAGRAM -->
-      <a class="option"
-         href="https://instagram.com/flaviobolsonaro"
+     <a id="instagram" class="option"
          target="_blank"
          rel="noopener noreferrer">
         <div class="icon">
@@ -203,9 +201,7 @@
       </a>
 
       <!-- GOOGLE -->
-      <a class="option"
-         href="https://www.google.com/search?sca_esv=38aef8cd55a52002&rlz=1CDGOYI_enBR1200BR1200&hl=pt&sxsrf=APpeQnshZEZroMPmNCrkN2HAfIAq2ElJkA:1788740037116&q=avalia%C3%A7%C3%B5es+sobre+arco+industrial&uds=AJ5uw19S1BN0dRhQi48DwkibpdM5KI4rLsigEY5adIgXj7PvhahzZASPwiJE6UO_AKhfcZlBLiRkPzflBZCMM4WXC_IoqTTspLuRh4X2Iv3tObTv7V7X37UVsdgfrCnRSEFWU7yH4XWp5DJcvRtzuMjruunRWhhfgMAyXEC-eVUqEvWoWvQsz9Or7V8Ms0_bzd2rQM2HrHS-sb9rqioj57uv30j249Rmb5BnWKTHPoY31xSIyNOFWB2t9Xv68HZhltENlhhf80YLMLPYuE1N-OR9wk20tP4QZ1ctJl7YaTmb7vogyHn4GX9LyfDfoaufYBnrVL91bqUGbtYqFyXS5IwwTSmBvCBTYUlfftT7-AZW0QYrE0Le0mz8m-PlGZGOQZZnbj2sSriyPBzRO4ZjG_zCAF8nJ8r60M9liNQAJwrmfwflcCQzW_MpEr7jtN7NKLECy66VPCRO7Ii6ybMYopFgjHq8HkrMA9aiqYLfc1FXJ6CVT8YkD1wAlYJ3krLBn-lhRT-DcYW4WQsxYlPCAhI-PIs8p2P7m22bDWxhV28OGXPTdrWYlDLGTh0Ilq90PNfgZbt6HspOT2VOOtr8g92Qa9F6FI4O-zLwk4VlCdA3T-8j_Gxk9oM&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_56j-q-RILD7o0-bSePGE9HhWA7v2n41A0H_J01lCMMdJDQ7Kv4udDCN_lzWvINxAvoBT_BwYc_Odf8Mz_Mvaq0Oib0x6jzULftLsXkS16lIuc-R-w%3D%3D&sa=X&ved=2ahUKEwjty4f0l9uWAxV7H7kGHd1GBhgQk8gLegQIGxAB&ictx=1&stq=1&cs=1&lei=xQGeaq3VBvu-5OUP3Y2ZwAE#ebo=2"
-         target="_blank"
+     <a id="google" class="option"
          rel="noopener noreferrer">
        <div class="icon">
   <i class="fa-brands fa-google"></i>
@@ -225,5 +221,45 @@
     </footer>
 
   </main>
+	<script>
+ 
+const clientes = {
+1: {
+nome: "Cliente 1",
+whatsapp: "https://wa.me/5511999999999",
+instagram: "https://instagram.com/cliente1",
+google: "https://google.com"
+},
+ 
+2: {
+nome: "Cliente 2",
+whatsapp: "https://wa.me/5511888888888",
+instagram: "https://instagram.com/cliente2",
+google: "https://google.com"
+}
+};
+
+const params = new URLSearchParams(window.location.search);
+
+const clienteId = params.get("cliente");
+
+const cliente = clientes[clienteId];
+
+if(cliente){
+
+  document.getElementById("titulo").innerText =
+    cliente.nome;
+
+  document.getElementById("whatsapp").href =
+    cliente.whatsapp;
+
+  document.getElementById("instagram").href =
+    cliente.instagram;
+
+  document.getElementById("google").href =
+    cliente.google;
+}
+ 
+</script>
 </body>
 </html>
