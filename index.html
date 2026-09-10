@@ -270,9 +270,8 @@ const cliente = clientes[clienteId];
 
 if(cliente){
 
-	document.getElementById("logo").src =
-cliente.logo;	
-	
+  document.getElementById("logo").src = cliente.logo;
+
   document.getElementById("titulo").innerText =
     cliente.nome;
 
@@ -281,21 +280,31 @@ cliente.logo;
 
   document.getElementById("instagram").href =
     cliente.instagram;
-	
-	document.getElementById("linkedin").href =
-    cliente.linkedin;
 
-  document.getElementById("google").href =
-    cliente.google;
-	
-	document.getElementById("linkedin").href =
-cliente.linkedin;
- 
-} else {
- 
-document.getElementById("linkedin").style.display =
-"none";
-	
+  // GOOGLE
+  if(cliente.google){
+    document.getElementById("google").href =
+      cliente.google;
+
+    document.getElementById("google").style.display =
+      "flex";
+  } else {
+    document.getElementById("google").style.display =
+      "none";
+  }
+
+  // LINKEDIN
+  if(cliente.linkedin){
+    document.getElementById("linkedin").href =
+      cliente.linkedin;
+
+    document.getElementById("linkedin").style.display =
+      "flex";
+  } else {
+    document.getElementById("linkedin").style.display =
+      "none";
+  }
+
 }
  
 </script>
