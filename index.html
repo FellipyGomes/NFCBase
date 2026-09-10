@@ -164,7 +164,7 @@
   <main class="page">
 
     <header class="brand">
-      <div class="logo">LOGO</div>
+     <img id="logo" class="logo" src="" alt="Logo">
 
      <h1 id="titulo">Bem vindo</h1>
       <p>Escolha uma opção para continuar.</p>
@@ -226,6 +226,7 @@
 const clientes = {
 1: {
 nome: "Tio Sam",
+logo: "logos/tiosam.png",
 whatsapp: "https://wa.me/5519992881839",
 instagram: "https://instagram.com/hotdogtiosam",
 google: "https://www.google.com/search?q=hot+dog+tio+sam&rlz=1C1GCEB_enUS1076US1076&oq=hot+dog+tio+sam&gs_lcrp=EgZjaHJvbWUqCQgAECMYJxjjAjIJCAAQIxgnGOMCMgwIARAuGCcYrwEYxwEyCAgCEAAYFhgeMggIAxAAGBYYHjIICAQQABgWGB4yCAgFEAAYFhgeMggIBhAAGBYYHjIKCAcQABiABBiiBNIBCDQ2ODdqMGo3qAIIsAIB8QVklycauUpFow&sourceid=chrome&source=chrome.ob&ie=UTF-8&safe=active&ssui=on"
@@ -255,6 +256,9 @@ const cliente = clientes[clienteId];
 
 if(cliente){
 
+	document.getElementById("logo").src =
+cliente.logo;	
+	
   document.getElementById("titulo").innerText =
     cliente.nome;
 
